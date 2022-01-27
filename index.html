@@ -15,17 +15,14 @@
   <div id="app"></div>
   <script>
     // SCOPING | var vs let vs const and boxing | loops, ifs, switches, etc.
-    // var block scoped
-    // let function scoped
-    {
-      var a = 123;
-    }
-    console.log(a); // logs 123
-    {
-      let b = 456;
-    }
-    console.log(b); // Uncaught ReferenceError: b is not defined
-    // a can be seen outside, b is not even defined outside of block
+    // const in once and done / no re-binding (E.g. let a = 3 ... a = 4);
+    // const is mutable (E.g., add to const array, etc.)
+    // const is the preferred tool
+    const a = {
+      name: 'b',
+    };
+    a.name = 'c';
+    console.log(a); // Object { name: "c" }
   </script>
 </body>
 
