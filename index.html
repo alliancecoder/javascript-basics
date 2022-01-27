@@ -17,10 +17,15 @@
     // SCOPING | var vs let vs const and boxing | loops, ifs, switches, etc.
     // var block scoped
     // let function scoped
-    var a = 123;
-    console.log(a);
-    let b = 456;
-    console.log(b);
+    {
+      var a = 123;
+    }
+    console.log(a); // logs 123
+    {
+      let b = 456;
+    }
+    console.log(b); // Uncaught ReferenceError: b is not defined
+    // a can be seen outside, b is not even defined outside of block
   </script>
 </body>
 
