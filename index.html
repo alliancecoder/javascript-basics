@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ultimate Courses</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="logo">
-        <div class="logo-ultimate"></div>
-        <p class="logo-name">Ultimate Courses<span>&trade;</span></p>
-      </div>
-    </header>
-    <div id="app"></div>
-    <script>
-      // declaration and init in one (prefered not multi)
-      var a = 99;
-      var b = 11;
-      var c = 55;
-      console.log(a, b, c);
-      // dynamically overritten of any type (sucks)
-      a = {};
-      b = [];
-      c = '55';
-      console.log(a, b, c);
-    </script>
-  </body>
+
+<head>
+  <title>Ultimate Courses</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <div class="logo-ultimate"></div>
+      <p class="logo-name">Ultimate Courses<span>&trade;</span></p>
+    </div>
+  </header>
+  <div id="app"></div>
+  <script>
+    // hoisting
+    console.log(a); // undefined (a.k.a. hoisted)
+    console.log(x); // Uncaught ReferenceError: x is not defined
+    var a = 99;
+    console.log(a); // 99 once error is fixed
+  </script>
+</body>
+
 </html>
