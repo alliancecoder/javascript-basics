@@ -14,11 +14,13 @@
   </header>
   <div id="app"></div>
   <script>
-    // hoisting
-    console.log(a); // undefined (a.k.a. hoisted)
-    console.log(x); // Uncaught ReferenceError: x is not defined
-    var a = 99;
-    console.log(a); // 99 once error is fixed
+    // SCOPING | var vs let vs const and boxing | loops, ifs, switches, etc.
+    // var block scoped
+    // let function scoped
+    var a = 123;
+    console.log(a);
+    let b = 456;
+    console.log(b);
   </script>
 </body>
 
