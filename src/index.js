@@ -4,18 +4,17 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // ----
-// parsing strings to numbers
-// parseInt() and parseFloat()
+// NaN (not a number)
+const result = Number('55px');
 
-console.log(parseInt('55px', 10)); // the 10 is base10 which guarantees number identification (I.e., not hex etc)
-console.log(parseInt('100110', 2)); // base 2 (binary) 38
+// isNaN (tests for NaN ergo brokenish)
+console.log(isNaN(result)); // true
+console.log(isNaN('I am a string!')); // true
 
-// decimals
-console.log(parseInt('55.999px', 10)); // still 55
-console.log(parseFloat('55.999px', 10)); // 55.999
+// updated method of Number checks for nummber
+console.log(Number.isNaN(result)); // true
+console.log(Number.isNaN('I am a string!')); // false
 
-// the 'e'
-console.log(Number(55e10)); // 550000000000 I.e. SN 55 * 10^10
-// + OPERATOR works like Number()
-console.log(+'55.999'); // 55.999
-console.log(9 + +'55.999'); // 64.999 same a 9 + the operator Number(55.999)
+// other methods of Number
+// Number.isInteger()
+// Number.NaN returns NaN locally scoped not Globally scoped.
