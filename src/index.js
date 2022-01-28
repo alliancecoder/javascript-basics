@@ -3,19 +3,32 @@ import '../assets/css/style.css';
 const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
-// ----
-// String Methods
-console.log(String.prototype);
+// --------------------------------------------------
+// Functions
+// --------------------------------------------------
 
-console.log('Pepperoni'.indexOf('P'));
-console.log('Pepperoni'.includes('P'));
+// hoisting tests
+console.log(makeCar);
+console.log(makeCarExpression);
+console.log(makeCarArrow);
+console.log(makeCarShorthand);
 
-console.log('Pepperoni'.replace('oni', 'fire'));
-console.log('Pepperoni'.replace(/oni$/, 'fire'));
+// Option One declaration
+function makeCar() {
+    console.log('Making car...');
+}
+// calling function
+makeCar();
 
-console.log('Pepperoni'.slice(2, -3));
+// Option Two Function Expression (anonymous or named versions)
+const makeCarExpression = function () { }
+console.log(makeCarExpression.name);
 
-console.log('Pepperoni~Plain'.split('~')[1]);
-console.log('Pepperoni~Plain'.split(/~/)[1]);
+// Option Three Arrow Function
+const makeCarArrow = () => {
+    console.log('Making car inside Arrow...');
+};
+makeCarArrow();
 
-console.log('   4444 5555  ');
+const makeCarShorthand = () => console.log('Short');
+makeCarShorthand();
