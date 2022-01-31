@@ -4,26 +4,14 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // --------------------------------------------------
-// Function Rest Parameters and 
+// Function Rerurn values
 // --------------------------------------------------
 
-
-// old method
-function makeCarPrice() {
-    console.log(arguments, Array.isArray(arguments)); // Array Like list | Arguments { 0: 11, 1: 44, 2: 55, 3: 99, … } false
-    // convert to array
-    const total = Array.from(arguments).reduce((prev, next) => prev + next);
+function makeCarPrice(...params) {
+    const total = params.reduce((prev, next) => prev + next)
     console.log(total);
+    return; // <- this is an implicit return which returns undefined because we aren't telling it what to return.
 }
 
-makeCarPrice(11, 44 ,55, 99, 22);
-
-// new mathod rest parameter using the spreader
-function makeCarPriceRest(numberOne, ...params) {
-    console.log(numberOne, params);
-    console.log(Array.isArray(params));
-    // removing the numberOne we can reduce to:
-    // const total = params.reduce((prev, next) => prev + next);
-}
-
-makeCarPriceRest(11, 44 ,55, 99, 22);
+const totalPrice = makeCarPrice(11, 22, 33, 44, 55);
+console.log(totalPrice); //undefined
