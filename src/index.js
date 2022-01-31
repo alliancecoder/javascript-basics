@@ -4,19 +4,22 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // --------------------------------------------------
-// Function IIFE immediatley Invoked Function Expression
+// Functions and Callbacks
 // --------------------------------------------------
 
-// expression by wrapping in parens and calling it immediately
-// like JQuery
-const carPartId = (function (id) {
-    const theId = `CAR_PART_${id}`;
-    return function(name) {
-        return `${theId}_${name}`;
-    };
-})('XAT5461');
+function carPartId(name, fn) {
+    const theId = `CAR_PART_XAT5461`;
+    fn(theId);
+}
 
-// Encapsulation of ID
-console.log(carPartId('LEFT_DOOR'));
-console.log(carPartId('RIGHT_DOOR'));
-console.log(carPartId('WINDSCREEN'));
+carPartId('LEFT_DOOR', function(id) {
+    console.log(`Car Part Id: ${id}`);
+});
+
+/**
+ * Here the carPartId calls the function
+ * The id is created
+ * the passed fn is then called with the id
+ * the original caller is then able to log the ID
+ * CALLBACK
+ */
