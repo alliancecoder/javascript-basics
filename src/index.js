@@ -10,8 +10,13 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 // expression by wrapping in parens and calling it immediately
 // like JQuery
 const carPartId = (function (id) {
-    console.log(id);
-})('id-suplied-here');
+    const theId = `CAR_PART_${id}`;
+    return function(name) {
+        return `${theId}_${name}`;
+    };
+})('XAT5461');
 
-// notice the lack of the method paren - they are at the end of the expression
-console.log(carPartId);
+// Encapsulation of ID
+console.log(carPartId('LEFT_DOOR'));
+console.log(carPartId('RIGHT_DOOR'));
+console.log(carPartId('WINDSCREEN'));
