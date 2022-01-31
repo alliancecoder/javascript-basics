@@ -9,17 +9,19 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 function carPartId(name, fn) {
     const theId = `CAR_PART_XAT5461`;
-    fn(theId);
+    return fn(`${theId}_${name}`);
 }
 
-carPartId('LEFT_DOOR', function(id) {
-    console.log(`Car Part Id: ${id}`);
+const carPart = carPartId('LEFT_DOOR', function(id) {
+    return `Car Part Id: ${id}`;
 });
+
+console.log(carPart);
 
 /**
  * Here the carPartId calls the function
  * The id is created
- * the passed fn is then called with the id
- * the original caller is then able to log the ID
- * CALLBACK
+ * the passed fn is then called and returned to the calling function
+ * the original caller is then able to return or trenasform the returned data
+ * and we can log the result.
  */
