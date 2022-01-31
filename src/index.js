@@ -7,13 +7,10 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 // Function Scope
 // --------------------------------------------------
 
-// scope 1 visible in file
-const anotherId = '1234abcd';
-
-
 function makeCarPartId(id) {
-    // scope 2 visible in function only
-    console.log(id, anotherId);
+    const theId = `CAR_PART_${id}`;
+    return theId;
 }
 
-makeCarPartId('x90wece998');
+const carPartId = makeCarPartId('x90wece998');
+console.log(carPartId);
