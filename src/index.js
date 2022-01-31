@@ -4,25 +4,14 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // --------------------------------------------------
-// Function Scope
+// Function IIFE immediatley Invoked Function Expression
 // --------------------------------------------------
 
-function makeCarPartId(id) {
-    const theId = `CAR_PART_${id}`;
-    // internal function has access to the function scoped vars.
-    return function(name) {
-        return `${theId}_${name.toUpperCase()}`
-    };
-}
+// expression by wrapping in parens and calling it immediately
+// like JQuery
+const carPartId = (function (id) {
+    console.log(id);
+})('id-suplied-here');
 
-const carPartId = makeCarPartId('x90wece998');
-// the function returns access to the inner function so we can call both as a cascading call
-console.log(carPartId('Left_Door')); 
-console.log(carPartId('Right_Door')); 
-console.log(carPartId('Windscreen')); 
-
-const anotherCarPartId = makeCarPartId('d20399df');
-// the function returns access to the inner function so we can call both as a cascading call
-console.log(anotherCarPartId('Left_Door')); 
-console.log(anotherCarPartId('Right_Door')); 
-console.log(anotherCarPartId('Windscreen')); 
+// notice the lack of the method paren - they are at the end of the expression
+console.log(carPartId);
