@@ -10,10 +10,12 @@ app.innerHTML = '<h1>JavaScript Basics</h1>';
 const firstCar = { id: 'XAT5416' };
 const secondCar = { id: 'XAT5417' };
 
-function carPartId() {
-    console.log(`${this.id}`);
+function carPartId(name, quantity) {
+    console.log(`${this.id}_${name}_${quantity}`);
 }
 
 // The call() method calls a function with a given this value and arguments provided individually. MDN
-carPartId.call(firstCar);
-carPartId.call(secondCar);
+// call = c = commas
+carPartId.call(firstCar, 'LEFT_DOOR', 12); // first param this, second passes
+// apply = a = array
+carPartId.apply(secondCar, ['RIGHT_DOOR', 21]); // first this, must be an array for second arg
