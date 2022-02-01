@@ -4,24 +4,16 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // --------------------------------------------------
-// Functions and Callbacks
+// Functions Contect (this)
 // --------------------------------------------------
 
-function carPartId(name, fn) {
-    const theId = `CAR_PART_XAT5461`;
-    return fn(`${theId}_${name}`);
+const firstCar = { id: 'XAT5416' };
+const secondCar = { id: 'XAT5417' };
+
+function carPartId() {
+    console.log(`${this.id}`);
 }
 
-const carPart = carPartId('LEFT_DOOR', function(id) {
-    return `Car Part Id: ${id}`;
-});
-
-console.log(carPart);
-
-/**
- * Here the carPartId calls the function
- * The id is created
- * the passed fn is then called and returned to the calling function
- * the original caller is then able to return or trenasform the returned data
- * and we can log the result.
- */
+// The call() method calls a function with a given this value and arguments provided individually. MDN
+carPartId.call(firstCar);
+carPartId.call(secondCar);
