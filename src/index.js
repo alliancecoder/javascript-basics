@@ -12,25 +12,13 @@ const drink = {
     id: 'XAT5621',
     name: 'Root Beer',
     price: 99,
-    getDrinkDetails() {
-        return `Drink ${this.name} (${this.price})`
-    }
-};
-
-// PREVIOUS METHOD (babel)
-const oldDrink = {
-    id: 'XAT5621',
-    name: 'Root Beer',
-    price: 99,
-    getDrinkDetails: function () {
-        return `Drink ${this.name} (${this.price})`
-    }
+    getDrinkDetails: () => `Drink ${this.name} (${this.price})`,
 };
 
 console.log(drink.getDrinkDetails());
-console.log(oldDrink.getDrinkDetails());
 
 /**
- * Two objects are never the same {} === {} is false
- * Unless you are comparing a byRef like drink === drinkReference
+ * Using arrow functions breaks thge use of this
+ * because in the arrowe function 'this' is determined by 
+ * ther calling method
  */
