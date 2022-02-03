@@ -12,13 +12,15 @@ const drink = {
     id: 'XAT5621',
     name: 'Root Beer',
     price: 99,
-    getDrinkDetails: () => `Drink ${this.name} (${this.price})`,
+    getDrinkDetails() {
+        return `Drink ${this.name} (${this.price})`
+    },
+    'complex property': 'value of complex property'
 };
 
 console.log(drink.getDrinkDetails());
 
 /**
- * Using arrow functions breaks thge use of this
- * because in the arrowe function 'this' is determined by 
- * ther calling method
+ * KV Pairs are stored like 'key': 'value' so both works
+ * the use of the space requires the '' within the key 
  */
