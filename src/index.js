@@ -14,4 +14,11 @@ const drink = {
     price: 99
 };
 
+const drinkReference = drink;
+drinkReference.name = 'Sunkist';
+
 console.log(drink);
+
+/**
+ * Objects are pointers (By Reference)
+ */
