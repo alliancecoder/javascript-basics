@@ -20,5 +20,6 @@ drinkReference.name = 'Sunkist';
 console.log(drink);
 
 /**
- * Objects are pointers (By Reference)
+ * Two objects are never the same {} === {} is false
+ * Unless you are comparing a byRef like drink === drinkReference
  */
