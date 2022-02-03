@@ -4,20 +4,31 @@ const app = document.getElementById('app');
 app.innerHTML = '<h1>JavaScript Basics</h1>';
 
 // --------------------------------------------------
-// Object Literal, Function and Constructor Syntax
+// Properties, Methods and Values
 // --------------------------------------------------
 
-// object literal
+// ES6
 const drink = {
     id: 'XAT5621',
     name: 'Root Beer',
-    price: 99
+    price: 99,
+    getDrinkDetails() {
+        return `Drink ${this.name} (${this.price})`
+    }
 };
 
-const drinkReference = drink;
-drinkReference.name = 'Sunkist';
+// PREVIOUS METHOD (babel)
+const oldDrink = {
+    id: 'XAT5621',
+    name: 'Root Beer',
+    price: 99,
+    getDrinkDetails: function () {
+        return `Drink ${this.name} (${this.price})`
+    }
+};
 
-console.log(drink);
+console.log(drink.getDrinkDetails());
+console.log(oldDrink.getDrinkDetails());
 
 /**
  * Two objects are never the same {} === {} is false
