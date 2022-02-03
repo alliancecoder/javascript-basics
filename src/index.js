@@ -20,7 +20,11 @@ const drink = {
 
 console.log(drink.getDrinkDetails());
 
+// logging properties uses the key
+console.log(drink['complex property']);
+
 /**
  * KV Pairs are stored like 'key': 'value' so both works
- * the use of the space requires the '' within the key 
+ * the use of the space requires the '' within the key
+ * logging properties uses the key
  */
